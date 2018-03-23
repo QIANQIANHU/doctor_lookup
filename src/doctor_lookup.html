@@ -4,17 +4,25 @@
     <!-- <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 
-    <title>Interests</title>
+    <title>Doctor Lookup</title>
   </head>
   <body>
     <div class="container">
-      <h1>Get details about the location of your place of interest!</h1>
-      <label for="museumName">Enter your museum name:</label>
-      <input id="museumName" type="text">
-      <button class="btn-success" id="list">Get your museum</button>
-      <div id="errors"></div>
-      <div id="name"></div>
-      <div id="address"></div>
+      <h1>Doctor Information</h1>
+      <form id= "issueForm">
+        <label for="issue">Please enter you mediacl issue</label>
+        <input id="issue" type="text">
+        <button class="btn-success" id="issueOutput">Show doctors list</button>
+     </form>
+     <form id= "nameForm">
+       <label for="doctorName">Please enter doctor's name</label>
+       <input id="doctorName" type="text">
+       <button class="btn-success" id="doctorOutput">Show details</button>
+    </form>
+
+      <div id="showList"></div>
+      <div id="showDetails"></div>
+      <div id="error"></div>
     </div>
   </body>
 </html>
