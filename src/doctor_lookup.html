@@ -9,18 +9,21 @@
   <body>
     <div class="container">
       <h1>Doctor Information</h1>
-      <form id= "issueForm">
+      <form id= "issueForm" onsubmit="return false;">
         <label for="issue">Please enter you mediacl issue</label>
         <input id="issue" type="text">
         <button class="btn-success" id="issueOutput">Show doctors list</button>
      </form>
-     <form id= "nameForm">
+     <form id= "nameForm" onsubmit="return false;">
        <label for="doctorName">Please enter doctor's name</label>
        <input id="doctorName" type="text">
        <button class="btn-success" id="doctorOutput">Show details</button>
     </form>
 
-      <div id="showList"></div>
+      
+      <ul id="showList"></ul>
+
+      </ul>
       <div id="showDetails"></div>
       <div id="error"></div>
     </div>

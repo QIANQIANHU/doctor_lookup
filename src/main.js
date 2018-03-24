@@ -10,19 +10,22 @@ $(document).ready(function() {
 
     $.ajax({
       url:
-      `https://api.betterdoctor.com/2016-03-01/doctors?query=${issue}&location=37.773,-122.413,100&skip=2&limit=10&user_key=2066f67a6ef0762a8ac45f20e50d011f`,
-
+      `https://api.betterdoctor.com/2016-03-01/doctors?location=37.773,-122.413,100&user_key=2066f67a6ef0762a8ac45f20e50d011f&query=${issue}`,
       type: 'GET',
       data: {
         format: 'json'
       },
       success: function(response) {
-        for(let i = 0; i < response.data.profile.length; i++){
-          $('#showList').text`A list of doctors that specialized in this medial issue are following ${response.data.profile.last_name}.`);
-          ;
+
+        for(let i = 0; i < response.data.length; i++){
+
+          $('#showList').append(`A list of doctors that specialized in this medial issue are following ${response.data[i].profile.last_name}.`);
+
+
         }
       },
-      error: function() {
+      error: function(request, status, error) {
+    
         $('#errors').text("There was an error processing your request. Please try again.")
       }
     });
