@@ -2,9 +2,11 @@
 import './styles.css';
 import $ from 'jquery';
 import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 $(document).ready(function() {
-  $('#issueOutput').click(function() {
+  $('#issueOutput').submit(function(event) {
+    event.preventDefault();
     let issue= $('#issue').val();
     $('#issue').val("");
 
@@ -21,7 +23,7 @@ $(document).ready(function() {
         }else{
           for(let i = 0; i < response.data.length; i++){
 
-            $('#showList').append(`<p>${response.data[i].profile.first_name} ${response.data[i].profile.last_name}</p>`);
+            $('#showList').append(`<p><strong>${response.data[i].profile.first_name} ${response.data[i].profile.last_name}</strong></p>`);
           }
         }
       },
@@ -31,7 +33,9 @@ $(document).ready(function() {
       }
     });
 
-    $('#doctorOutput').click(function() {
+    $('#doctorOutput').submit(function(event) {
+      event.preventDefault();
+
       let doctorName = $('#doctorName').val();
       $('#doctorName').val("");
 
@@ -50,9 +54,9 @@ $(document).ready(function() {
 
           for(let i = 0; i < response.data.length; i++){
 
-            $('#showDetails').append(`<p>Doctor's name:${response.data[i].profile.first_name} ${response.data[i].profile.last_name}</p>
-            <p>Address:${response.data[i].practices[0].visit_address.street},   ${response.data[i].practices[0].visit_address.city}, ${response.data[i].practices[0].visit_address.state} ${response.data[i].practices[0].visit_address.zip}</p>
-            <p>Phone: ${response.data[i].practices[0].phones[0].number}</p> <p>Website:${response.data[i].practices[0].website}</p> <p>Accepts new patients:${response.data[i].practices[0].accepts_new_patients}</p>`);
+            $('#showDetails').append(`<p><strong>Doctor's name:</strong> ${response.data[i].profile.first_name} ${response.data[i].profile.last_name}</p>
+            <p><strong>Address: </strong>${response.data[i].practices[0].visit_address.street},   ${response.data[i].practices[0].visit_address.city}, ${response.data[i].practices[0].visit_address.state} ${response.data[i].practices[0].visit_address.zip}</p>
+            <p><strong>Phone:</strong> ${response.data[i].practices[0].phones[0].number}</p> <p><strong>Website:</strong> ${response.data[i].practices[0].website}</p> <p><strong>Accepts new patients:</strong> ${response.data[i].practices[0].accepts_new_patients}</p>`);
 
 }
           }

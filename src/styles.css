@@ -1,3 +1,14 @@
-body {
-  background-color: #7FDBFF;
+.jumbotron {
+  text-align: center;
+  background-color: yellow;
+}
+
+label {
+  font-weight: bold;
+
+}
+
+button {
+  background-color: #BC8F8F;
+
 }
