@@ -3,6 +3,8 @@ import './styles.css';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './../.env';
+const apiKey = process.env.exports.apiKey;
 
 $(document).ready(function() {
   $('#issueOutput').submit(function(event) {
@@ -12,7 +14,7 @@ $(document).ready(function() {
 
     $.ajax({
       url:
-      `https://api.betterdoctor.com/2016-03-01/doctors?query=${issue}&location=47.6062%2C-122.3321%2C100&user_key=2066f67a6ef0762a8ac45f20e50d011f`,
+      `https://api.betterdoctor.com/2016-03-01/doctors?query=${issue}&location=47.6062%2C-122.3321%2C100&user_key=${apiKey}`,
       type: 'GET',
       data: {
         format: 'json'
@@ -42,7 +44,7 @@ $(document).ready(function() {
 
       $.ajax({
         url:
-        `https://api.betterdoctor.com/2016-03-01/doctors?name=${doctorName}&location=47.6062%2C-122.3321%2C100&user_key=2066f67a6ef0762a8ac45f20e50d011f`,
+        `https://api.betterdoctor.com/2016-03-01/doctors?name=${doctorName}&location=47.6062%2C-122.3321%2C100&user_key=${apiKey}`,
         type: 'GET',
         data: {
           format: 'json'
