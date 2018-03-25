@@ -12,7 +12,7 @@ $(document).ready(function() {
 
     $.ajax({
       url:
-      `https://api.betterdoctor.com/2016-03-01/doctors?query=${issue}&location=37.773%2C-122.413%2C100&user_location=37.773%2C-122.413&skip=0&limit=10&user_key=2066f67a6ef0762a8ac45f20e50d011f`,
+      `https://api.betterdoctor.com/2016-03-01/doctors?query=${issue}&location=47.6062%2C-122.3321%2C100&user_key=2066f67a6ef0762a8ac45f20e50d011f`,
       type: 'GET',
       data: {
         format: 'json'
@@ -42,7 +42,7 @@ $(document).ready(function() {
 
       $.ajax({
         url:
-        `https://api.betterdoctor.com/2016-03-01/doctors?name=${doctorName}&location=37.773%2C-122.413%2C100&user_location=37.773%2C-122.413&skip=0&limit=10&user_key=2066f67a6ef0762a8ac45f20e50d011f`,
+        `https://api.betterdoctor.com/2016-03-01/doctors?name=${doctorName}&location=47.6062%2C-122.3321%2C100&user_key=2066f67a6ef0762a8ac45f20e50d011f`,
         type: 'GET',
         data: {
           format: 'json'
